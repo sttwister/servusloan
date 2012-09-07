@@ -1,5 +1,7 @@
 # Django settings for frisbuy project.
 
+import os.path
+
 from os import environ
 
 # Helper lambda for gracefully degrading environmental variables:
