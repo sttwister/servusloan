@@ -1,5 +1,10 @@
 # Django settings for frisbuy project.
 
+from os import environ
+
+# Helper lambda for gracefully degrading environmental variables:
+env = lambda e, d: environ[e] if environ.has_key(e) else d
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -113,6 +118,7 @@ INSTALLED_APPS = (
 
     # Third-party apps
     'gunicorn',
+    'social_auth',
     'south',
 
     # Django apps
@@ -122,10 +128,8 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
-    # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
+    'django.contrib.admin',
+    'django.contrib.admindocs',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -156,3 +160,16 @@ LOGGING = {
         },
     }
 }
+
+# django-social-auth
+
+
+AUTHENTICATION_BACKENDS = (
+    'social_auth.backends.google.GoogleOAuth2Backend',
+)
+
+
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/'
+
+GOOGLE_OAUTH2_CLIENT_ID      = env('GOOGLE_OAUTH2_CLIENT_ID', '')
+GOOGLE_OAUTH2_CLIENT_SECRET  = env('GOOGLE_OAUTH2_CLIENT_SECRET', '')
