@@ -113,6 +113,11 @@ TEMPLATE_DIRS = (
 )
 
 INSTALLED_APPS = (
+
+    # Third-party apps
+    'gunicorn',
+
+    # Django apps
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
