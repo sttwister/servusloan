@@ -13,8 +13,4 @@ urlpatterns = patterns('',
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
 
-    # Examples:
-    # url(r'^$', 'frisbuy.views.home', name='home'),
-    # url(r'^frisbuy/', include('frisbuy.foo.urls')),
-
 )

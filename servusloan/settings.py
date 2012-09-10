@@ -1,4 +1,4 @@
-# Django settings for frisbuy project.
+# Django settings for servusloan project.
 
 import os.path
 
@@ -105,10 +105,10 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'frisbuy.urls'
+ROOT_URLCONF = 'servusloan.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'frisbuy.wsgi.application'
+WSGI_APPLICATION = 'servusloan.wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
